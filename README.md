@@ -180,3 +180,82 @@ Output
 ```
 Byte to string is pynative
 ```
+
+# 9.Merge 2 object băng một biểu thức duy nhất
+
+Bây giờ, nếu bạn có 2 object như sau
+
+```
+currentEmployee = {1: 'Scott', 2: "Eric", 3:"Kelly"}
+formerEmployee  = {2: 'Eric', 4: "Emma"}
+```
+
+Bạn đang mong muốn là sẽ merged chúng thành 1, hãy xem python xử lý thế nào nhé. 
+
+```
+// Python 3.5
+currentEmployee = {1: 'Scott', 2: "Eric", 3:"Kelly"}
+formerEmployee  = {2: 'Eric', 4: "Emma"}
+
+allEmployee = {**currentEmployee, **formerEmployee}
+print(allEmployee)
+```
+
+```
+Python 3.4 & 2
+
+currentEmployee = {1: 'Scott', 2: "Eric", 3:"Kelly"}
+formerEmployee  = {2: 'Eric', 4: "Emma"}
+
+def merge_dicts(dictOne, dictTwo):
+    dictThree = dictOne.copy()
+    dictThree.update(dictTwo)
+    return dictThree
+    
+print(merge_dicts(currentEmployee, formerEmployee))
+```
+
+# 10. Convert 2 danh sách vào 1 dictionary
+
+Bây giờ, nếu bạn có 2 danh sách, trong đó, 1 danh sách chứa key, danh sách còn lại chưa value. Bạn muốn đưa nó về thành 1 dictionary dạng key : value, hãy xem python làm điều này thế nào nhé
+
+```
+ItemId = [54, 65, 76]
+names = ["Hard Disk", "Laptop", "RAM"]
+
+itemDictionary = dict(zip(ItemId, names))
+
+print(itemDictionary)
+```
+
+# 11. Format number type float
+
+Nếu bạn luôn muốn số dạng float của mình được format hiển thị dưới dạng 2 số sau dấu , thì sẽ làm như sau
+
+```
+number= 88.2345
+print('{0:.2f}'.format(number))
+```
+
+# 12. Một function trả về nhiều gía trị
+
+```
+def multiplication_Division(num1, num2):
+  return num1*num2, num2/num1
+
+product, division = multiplication_Division(10, 20)
+print("Product", product, "Division", division)
+```
+
+# 14. Check value tồn tại trong array
+
+Bạn chỉ cần nhớ tới package numpy
+
+```
+import numpy
+
+arraySample = numpy.array([[1, 2], [3, 4], [4, 6], [7, 8]])
+
+if value in arraySample[:, col_num]:
+    print(value)
+```
